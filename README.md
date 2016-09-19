@@ -1,3 +1,10 @@
+# PHP Doc support in vim
+
+Fork which will integrate the documentation into Vim.
+
+Provides the native PHP Documentation as tags into Vim. Just use the normal tag
+navigation to jump to the documentation, e.g. into a preview window.
+
 # phpstorm-stubs
 
 STUBS are normal, syntactically correct PHP files that contain function & class signatures, constant definitions, etc. for all built in PHP stuff and most standard extensions. Stubs need to include complete [PHPDOC], especially proper @return annotations
@@ -5,12 +12,6 @@ STUBS are normal, syntactically correct PHP files that contain function & class 
 IDE needs them for completion, code inspection, type inference, doc popups, etc. Quality of most of this services depend on quality of the stubs (basically their PHPDOC @annotations).
 
 [Relevant open issues]
-
-### Contribution process
-[Contribution process](CONTRIBUTING.md)
-
-### Updating the IDE
-TBD: Have a full copy of .git repo within IDE and add it as an external library "PHP Runtime" to the project. It should then be easilly updatable both way via normal git methods.
 
 ### License
 [Apache 2]
