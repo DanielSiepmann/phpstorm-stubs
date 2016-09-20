@@ -1,9 +1,11 @@
-# PHP Doc support in vim
+# PHP Doc support in Vim
 
 Fork which will integrate the documentation into Vim.
 
 Provides the native PHP Documentation as tags into Vim. Just use the normal tag
 navigation to jump to the documentation, e.g. into a preview window.
+
+![Example](/Example.png?raw=true "Example")
 
 # phpstorm-stubs
 
