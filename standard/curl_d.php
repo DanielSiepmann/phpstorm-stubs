@@ -83,6 +83,7 @@ define ('CURLOPT_NETRC', 51);
  * @link http://us.php.net/manual/en/function.curl-setopt.php
  * @since 5.3.2
  */
+define ('CURLOPT_POSTREDIR', 161);
 define ('CURLOPT_CERTINFO', -1);
 define ('CURLOPT_FTPASCII', -1);
 define ('CURLOPT_MUTE', -1);
@@ -812,3 +813,22 @@ define ('CURLFTP_CREATE_DIR_RETRY', 2);
  */
 define('CURLAUTH_NEGOTIATE', 4);
 
+
+/**
+ * @link http://php.net/manual/en/curl.constants.php
+ * @since 7.1
+ */
+
+define('CURLMOPT_PUSHFUNCTION', 20014);
+
+/**
+ * @link http://php.net/manual/en/curl.constants.php
+ * @since 7.1
+ */
+define('CURL_PUSH_OK', 0);
+
+/**
+ * @link http://php.net/manual/en/curl.constants.php
+ * @since 7.1
+ */
+define('CURL_PUSH_DENY',1);

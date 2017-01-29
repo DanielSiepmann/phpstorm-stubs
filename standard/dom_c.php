@@ -366,7 +366,6 @@ class DOMNode  {
 class DOMException extends Exception  {
 
     /**
-     * @var
      * @since 5.0
      * An integer indicating the type of error generated
      * @link http://php.net/manual/en/class.domexception.php#domexception.props.code
@@ -1080,10 +1079,12 @@ class DOMDocument extends DOMNode  {
      * @param string $source <p>
      * A string containing the schema.
      * </p>
+     * @param int $flags [optional] <p>A bitmask of Libxml schema validation flags. Currently the only supported value is <b>LIBXML_SCHEMA_CREATE</b>.
+     * Available since PHP 5.5.2 and Libxml 2.6.14.</p>
      * @return bool true on success or false on failure.
      * @since 5.0
      */
-    public function schemaValidateSource ($source) {}
+    public function schemaValidateSource ($source, $flags) {}
 
     /**
      * Performs relaxNG validation on the document
@@ -1146,7 +1147,7 @@ class DOMNodeList implements Traversable {
 	 * @param int $index <p>
 	 * Index of the node into the collection.
 	 * </p>
-	 * @return DOMNode The node at the indexth position in the 
+	 * @return DOMElement The node at the indexth position in the 
 	 * DOMNodeList, or &null; if that is not a valid
 	 * index.
 	 * @since 5.0
@@ -1760,7 +1761,6 @@ class DOMElement extends DOMNode  {
 class DOMText extends DOMCharacterData  {
 
     /**
-     * @var
      * @since 5.0
      * Holds all the text of logically-adjacent (not separated by Element, Comment or Processing Instruction) Text nodes.
      * @link http://php.net/manual/en/class.domtext.php#domtext.props.wholeText
@@ -2044,7 +2044,6 @@ class DOMEntityReference extends DOMNode  {
 class DOMProcessingInstruction extends DOMNode  {
 
     /**
-     * @var
      * @since 5.0
      *
      * @link http://php.net/manual/en/class.domprocessinginstruction.php#domprocessinginstruction.props.target
@@ -2052,7 +2051,6 @@ class DOMProcessingInstruction extends DOMNode  {
     public $target;
 
     /**
-     * @var
      * @since 5.0
      *
      * @link http://php.net/manual/en/class.domprocessinginstruction.php#domprocessinginstruction.props.data

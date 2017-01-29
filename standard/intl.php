@@ -238,9 +238,9 @@ class Collator {
      * (PHP 5 &gt;= 5.3.0, PECL intl &gt;= 1.0.0)<br/>
      * Create a collator
      * @link http://php.net/manual/en/collator.construct.php
-     * @param $arg1
+     * @param string $locale
      */
-    public function __construct($arg1) { }
+    public function __construct($locale) { }
 
     /**
      * (PHP 5 &gt;= 5.3.0, PECL intl &gt;= 1.0.0)<br/>
@@ -4491,38 +4491,60 @@ function grapheme_stristr($haystack, $needle, $before_needle = false) { }
 function grapheme_extract($haystack, $size, $extract_type = null, $start = 0, &$next = null) { }
 
 /**
- * (PHP 5 &gt;= 5.3.0, PECL intl &gt;= 1.0.2, PECL idn &gt;= 0.1)<br/>
- * Convert UTF-8 encoded domain name to ASCII
+ * (PHP 5 &gt;= 5.3.0, PHP 7, PECL intl &gt;= 1.0.2, PHP 7, PECL idn &gt;= 0.1)<br/>
+ * Convert domain name to IDNA ASCII form.
  * @link http://php.net/manual/en/function.idn-to-ascii.php
- * @param string $utf8_domain <p>
- * The UTF-8 encoded domain name.
- * <p>
+ * @param string $domain <p>
+ * Domain to convert. In PHP 5 must be UTF-8 encoded.
  * If e.g. an ISO-8859-1 (aka Western Europe latin1) encoded string is
  * passed it will be converted into an ACE encoded "xn--" string.
  * It will not be the one you expected though!
  * </p>
- * @param int $errorcode [optional] <p>
- * Will be set to the IDNA error code.
+ * @param int $options [optional] <p>
+ * Conversion options - combination of IDNA_* constants (except IDNA_ERROR_* constants).
+ * </p>
+ * @param int $variant [optional] <p>
+ * Either INTL_IDNA_VARIANT_2003 for IDNA 2003 or INTL_IDNA_VARIANT_UTS46 for UTS #46.
+ * </p>
+ * @param array $idna_info [optional] <p>
+ * This parameter can be used only if INTL_IDNA_VARIANT_UTS46 was used for variant.
+ * In that case, it will be filled with an array with the keys 'result',
+ * the possibly illegal result of the transformation, 'isTransitionalDifferent',
+ * a boolean indicating whether the usage of the transitional mechanisms of UTS #46
+ * either has or would have changed the result and 'errors',
+ * which is an int representing a bitset of the error constants IDNA_ERROR_*.
  * </p>
  * @return string The ACE encoded version of the domain name or <b>FALSE</b> on failure.
  */
-function idn_to_ascii($utf8_domain, &$errorcode = null) { }
+function idn_to_ascii($domain, $options = 0, $variant = INTL_IDNA_VARIANT_2003, array &$idna_info) { }
 
 /**
- * (PHP 5 &gt;= 5.3.0, PECL intl &gt;= 1.0.2, PECL idn &gt;= 0.1)<br/>
- * Convert ASCII encoded domain name to UTF-8
+ * (PHP 5 &gt;= 5.3.0, PHP 7, PECL intl &gt;= 1.0.2, PHP 7, PECL idn &gt;= 0.1)<br/>
+ * Convert domain name from IDNA ASCII to Unicode.
  * @link http://php.net/manual/en/function.idn-to-utf8.php
- * @param string $ascii_domain <p>
+ * @param string $domain <p>
+ * Domain to convert in IDNA ASCII-compatible format.
  * The ASCII encoded domain name. Looks like "xn--..." if the it originally contained non-ASCII characters.
  * </p>
- * @param int $errorcode [optional] <p>
- * Will be set to the IDNA error code.
+ * @param int $options [optional] <p>
+ * Conversion options - combination of IDNA_* constants (except IDNA_ERROR_* constants).
+ * </p>
+ * @param int $variant [optional] <p>
+ * Either INTL_IDNA_VARIANT_2003 for IDNA 2003 or INTL_IDNA_VARIANT_UTS46 for UTS #46.
+ * </p>
+ * @param int &$idna_info [optional] <p>
+ * This parameter can be used only if INTL_IDNA_VARIANT_UTS46 was used for variant.
+ * In that case, it will be filled with an array with the keys 'result',
+ * the possibly illegal result of the transformation, 'isTransitionalDifferent',
+ * a boolean indicating whether the usage of the transitional mechanisms of UTS #46
+ * either has or would have changed the result and 'errors',
+ * which is an int representing a bitset of the error constants IDNA_ERROR_*.
  * </p>
  * @return string The UTF-8 encoded version of the domain name or <b>FALSE</b> on failure.
  * RFC 3490 4.2 states though "ToUnicode never fails. If any step fails, then the original input
  * sequence is returned immediately in that step."
  */
-function idn_to_utf8($ascii_domain, &$errorcode = null) { }
+function idn_to_utf8($domain, $options = 0, $variant = INTL_IDNA_VARIANT_2003, array &$idna_info) { }
 
 /**
  * (PHP 5 &gt;=5.5.0 PECL intl &gt;= 3.0.0a1)<br/>
@@ -6376,5 +6398,223 @@ class IntlCodePointBreakIterator extends IntlBreakIterator implements Traversabl
     public function getLastCodePoint() { }
 }
 
+class UConverter {
+
+    /* Constants */
+    const REASON_UNASSIGNED = 0;
+    const REASON_ILLEGAL = 1;
+    const REASON_IRREGULAR = 2;
+    const REASON_RESET = 3;
+    const REASON_CLOSE = 4;
+    const REASON_CLONE = 5;
+    const UNSUPPORTED_CONVERTER = -1;
+    const SBCS = 0;
+    const DBCS = 1;
+    const MBCS = 2;
+    const LATIN_1 = 3;
+    const UTF8 = 4;
+    const UTF16_BigEndian = 5;
+    const UTF16_LittleEndian = 6;
+    const UTF32_BigEndian = 7;
+    const UTF32_LittleEndian = 8;
+    const EBCDIC_STATEFUL = 9;
+    const ISO_2022 = 10;
+    const LMBCS_1 = 11;
+    const LMBCS_2 = 12;
+    const LMBCS_3 = 13;
+    const LMBCS_4 = 14;
+    const LMBCS_5 = 15;
+    const LMBCS_6 = 16;
+    const LMBCS_8 = 17;
+    const LMBCS_11 = 18;
+    const LMBCS_16 = 19;
+    const LMBCS_17 = 20;
+    const LMBCS_18 = 21;
+    const LMBCS_19 = 22;
+    const LMBCS_LAST = 22;
+    const HZ = 23;
+    const SCSU = 24;
+    const ISCII = 25;
+    const US_ASCII = 26;
+    const UTF7 = 27;
+    const BOCU1 = 28;
+    const UTF16 = 29;
+    const UTF32 = 30;
+    const CESU8 = 31;
+    const IMAP_MAILBOX = 32;
+
+    /* Methods */
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Create UConverter object
+     * @link http://php.net/manual/en/uconverter.construct.php
+     * @param string $destination_encoding
+     * @param string $source_encoding
+     */
+    public function __construct($destination_encoding = null, $source_encoding = null) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Convert string from one charset to anothe
+     * @link http://php.net/manual/en/uconverter.convert.php
+     * @param string $str
+     * @param bool $reverse
+     * @return string
+     */
+    public function convert($str, $reverse) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Default "from" callback function
+     * @link http://php.net/manual/en/uconverter.fromucallback.php
+     * @param int $reason
+     * @param string $source
+     * @param string $codePoint
+     * @param int $error
+     * @return mixed
+     */
+    public function fromUCallback($reason, $source, $codePoint, &$error) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get the aliases of the given name
+     * @link http://php.net/manual/en/uconverter.getaliases.php
+     * @param string $name
+     * @return array
+     */
+    public static function getAliases($name = null) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get the available canonical converter names
+     * @link http://php.net/manual/en/uconverter.getavailable.php
+     * @return array
+     */
+    public static function getAvailable() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get the destination encoding
+     * @link http://php.net/manual/en/uconverter.getdestinationencoding.php
+     * @return string
+     */
+    public function getDestinationEncoding() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get the destination converter type
+     * @link http://php.net/manual/en/uconverter.getdestinationtype.php
+     * @return int
+     */
+    public function getDestinationType() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get last error code on the object
+     * @link http://php.net/manual/en/uconverter.geterrorcode.php
+     * @return int
+     */
+    public function getErrorCode() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get last error message on the object
+     * @link http://php.net/manual/en/uconverter.geterrormessage.php
+     * @return string
+     */
+    public function getErrorMessage() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get the source encoding
+     * @link http://php.net/manual/en/uconverter.getsourceencoding.php
+     * @return string
+     */
+    public function getSourceEncoding() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get the source convertor type
+     * @link http://php.net/manual/en/uconverter.getsourcetype.php
+     * @return int
+     */
+    public function getSourceType() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get standards associated to converter names
+     * @link http://php.net/manual/en/uconverter.getstandards.php
+     * @return array
+     */
+    public static function getStandards() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get substitution chars
+     * @link http://php.net/manual/en/uconverter.getsubstchars.php
+     * @return string
+     */
+    public function getSubstChars() { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Get string representation of the callback reason
+     * @link http://php.net/manual/en/uconverter.reasontext.php
+     * @param int $reason
+     * @return string
+     */
+    public static function reasonText($reason) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Set the destination encoding
+     * @link http://php.net/manual/en/uconverter.setdestinationencoding.php
+     * @param string $encoding
+     * @return void
+     */
+    public function setDestinationEncoding($encoding) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Set the source encoding
+     * @link http://php.net/manual/en/uconverter.setsourceencoding.php
+     * @param string $encoding
+     * @return void
+     */
+    public function setSourceEncoding($encoding) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Set the substitution chars
+     * @link http://php.net/manual/en/uconverter.setsubstchars.php
+     * @param string $chars
+     * @return void
+     */
+    public function setSubstChars($chars) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Default "to" callback function
+     * @link http://php.net/manual/en/uconverter.toucallback.php
+     * @param int $reason
+     * @param string $source
+     * @param string $codeUnits
+     * @param int $error
+     * @return mixed
+     */
+    public function toUCallback($reason, $source, $codeUnits, &$error) { }
+
+    /**
+     * (PHP 5 &gt;=5.5.0)<br/>
+     * Convert string from one charset to another
+     * @link http://php.net/manual/en/uconverter.transcode.php
+     * @param string $str
+     * @param string $toEncoding
+     * @param string $fromEncoding
+     * @param array $options
+     * @return string
+     */
+    public static function transcode($str, $toEncoding, $fromEncoding, array $options = []) { }
+}
 // End of intl v.1.1.0
 ?>

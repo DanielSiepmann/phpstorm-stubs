@@ -91,7 +91,6 @@ abstract class ReflectionFunctionAbstract implements Reflector {
 	/**
 	 * To string
 	 * @link http://php.net/manual/en/reflectionfunctionabstract.tostring.php
-	 * @return string.
 	 * @since 5.0
 	 */
 	abstract public function __toString ();
@@ -265,6 +264,14 @@ abstract class ReflectionFunctionAbstract implements Reflector {
 	 * @since 5.0
 	 */
 	public function getStaticVariables () {}
+
+	/**
+	 * Checks if the function has a specified return type
+	 * @link http://php.net/manual/en/reflectionfunctionabstract.hasreturntype.php
+	 * @return bool Returns TRUE if the function is a specified return type, otherwise FALSE.
+	 * @since 7.0
+	 */
+	public function hasReturnType () {}
 
 	/**
 	 * Checks if returns reference

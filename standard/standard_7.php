@@ -178,12 +178,13 @@ function pack ($format, $args = null, $_ = null) {}
  * @param string $data <p>
  * The packed data.
  * </p>
+ * @param int $offset [optional]
  * @return array an associative array containing unpacked elements of binary
  * string.
  * @since 4.0
  * @since 5.0
  */
-function unpack ($format, $data) {}
+function unpack ($format, $data, $offset) {}
 
 /**
  * Tells what the user's browser is capable of
@@ -396,6 +397,12 @@ function scandir ($directory, $sorting_order = null, $context = null) {}
  * @param int $flags [optional] <p>
  * Valid flags:
  * GLOB_MARK - Adds a slash to each directory returned
+ * GLOB_NOSORT - Return files as they appear in the directory (no sorting). When this flag is not used, the pathnames are sorted alphabetically
+ * GLOB_NOCHECK - Return the search pattern if no files matching it were found
+ * GLOB_NOESCAPE - Backslashes do not quote metacharacters
+ * GLOB_BRACE - Expands {a,b,c} to match 'a', 'b', or 'c'
+ * GLOB_ONLYDIR - Return only directory entries which match the pattern
+ * GLOB_ERR - Stop on read errors (like unreadable directories), by default errors are ignored.
  * @return array an array containing the matched files/directories, an empty array
  * if no file matched or false on error.
  * </p>

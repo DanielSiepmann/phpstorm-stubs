@@ -145,13 +145,15 @@ function lcg_value () {}
  * @param string $str <p>
  * The input string.
  * </p>
- * @param int $phones [optional] <p>
+ * @param int $phonemes [optional] <p>
+ * This parameter restricts the returned metaphone key to phonemes characters in length.
+ * The default value of 0 means no restriction.
  * </p>
- * @return string the metaphone key as a string.
+ * @return string the metaphone key as a string, or FALSE on failure
  * @since 4.0
  * @since 5.0
  */
-function metaphone ($str, $phones = null) {}
+function metaphone ($str, $phonemes = 0) {}
 
 /**
  * Turn on output buffering
@@ -836,7 +838,7 @@ function max (array $value1, $value2 = null, ...$values) {}
  * @since 4.0
  * @since 5.0
  */
-function in_array ($needle, array $haystack, $strict = null) {}
+function in_array ($needle, array $haystack, $strict = false) {}
 
 /**
  * Searches the array for a given value and returns the corresponding key if successful
@@ -1134,7 +1136,7 @@ function array_splice (array &$input, $offset, $length = null, $replacement = nu
  * @since 4.0
  * @since 5.0
  */
-function array_slice (array $array, $offset, $length = null, $preserve_keys = null) {}
+function array_slice (array $array, $offset, $length = null, $preserve_keys = false) {}
 
 /**
  * Merge one or more arrays

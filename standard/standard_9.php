@@ -600,7 +600,7 @@ function array_udiff_uassoc(array $array1, array $array2, array $_ = null, $data
  * @param array $array <p>
  * The input array.
  * </p>
- * @return number the sum of values as an integer or float.
+ * @return int|float the sum of values as an integer or float.
  * @since 4.0.4
  * @since 5.0
  */
@@ -612,7 +612,7 @@ function array_sum(array $array) { }
  * @param array $array <p>
  * The array.
  * </p>
- * @return number the product as an integer or float.
+ * @return int|float the product as an integer or float.
  * @since 5.1.0
  */
 function array_product(array $array) { }
@@ -1058,7 +1058,7 @@ function stream_bucket_prepend($brigade, $bucket) { }
  * Append bucket to brigade
  * @link http://php.net/manual/en/function.stream-bucket-append.php
  * @param resource $brigade
- * @param resource $bucket
+ * @param object $bucket
  * @return void
  * @since 5.0
  */
@@ -1091,6 +1091,30 @@ function output_add_rewrite_var($name, $value) { }
 
 /**
  * Reset URL rewriter values
+ * <table>
+ * <thead>
+ * <tr>
+ * <th>Version</th>
+ * <th>Description</th>
+ * </tr>
+ *
+ * </thead>
+ *
+ * <tbody>
+ * <tr>
+ * <td>7.1.0</td>
+ * <td>
+ * Before PHP 7.1.0, rewrite vars set by <span class="function"><a href="function.output-add-rewrite-var.php" class="function">output_add_rewrite_var()</a></span>
+ * use the same Session module trans sid output buffer. Since PHP 7.1.0,
+ * dedicated output buffer is used and {@see output_reset_rewrite_vars()}
+ * only removes rewrite vars defined by {@see output_add_rewrite_var()}.
+ * </td>
+ * </tr>
+ *
+ * </tbody>
+ *
+ * </table>
+ *
  * @link http://php.net/manual/en/function.output-reset-rewrite-vars.php
  * @return bool true on success or false on failure.
  * @since 4.3.0
