@@ -11,7 +11,7 @@ function boolval($var) {}
 
 /**
  * Get the integer value of a variable
- * @link http://php.net/manual/en/function.intval.php
+ * @link https://php.net/manual/en/function.intval.php
  * @param mixed $var <p>
  * The scalar value being converted to an integer
  * </p>
@@ -41,7 +41,7 @@ function intval ($var, $base = null) {}
 
 /**
  * Get float value of a variable
- * @link http://php.net/manual/en/function.floatval.php
+ * @link https://php.net/manual/en/function.floatval.php
  * @param mixed $var May be any scalar type. should not be used on objects, as doing so will emit an E_NOTICE level error and return 1.
  * @return float value of the given variable. Empty arrays return 0, non-empty arrays return 1.
  * @since 4.2.0
@@ -51,10 +51,10 @@ function floatval ($var) {}
 
 /**
  * (PHP 4.2.0, PHP 5)<br/>
- * doubleval � Alias of floatval()
+ * Alias of floatval()
  * Get float value of a variable
  * &Alias; <function>floatval</function>
- * @link http://php.net/manual/en/function.doubleval.php
+ * @link https://php.net/manual/en/function.doubleval.php
  * @param mixed $var May be any scalar type. should not be used on objects, as doing so will emit an E_NOTICE level error and return 1.
  * @return float value of the given variable. Empty arrays return 0, non-empty arrays return 1.
  */
@@ -62,7 +62,7 @@ function doubleval ($var) {}
 
 /**
  * Get string value of a variable
- * @link http://php.net/manual/en/function.strval.php
+ * @link https://php.net/manual/en/function.strval.php
  * @param mixed $var <p>
  * The variable that is being converted to a string.
  * </p>
@@ -78,7 +78,7 @@ function strval ($var) {}
 
 /**
  * Get the type of a variable
- * @link http://php.net/manual/en/function.gettype.php
+ * @link https://php.net/manual/en/function.gettype.php
  * @param mixed $var <p>
  * The variable being type checked.
  * </p>
@@ -101,7 +101,7 @@ function gettype ($var) {}
 
 /**
  * Set the type of a variable
- * @link http://php.net/manual/en/function.settype.php
+ * @link https://php.net/manual/en/function.settype.php
  * @param mixed $var <p>
  * The variable being converted.
  * </p>
@@ -139,7 +139,7 @@ function settype (&$var, $type) {}
 
 /**
  * Finds whether a variable is &null;
- * @link http://php.net/manual/en/function.is-null.php
+ * @link https://php.net/manual/en/function.is-null.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -152,7 +152,7 @@ function is_null ($var) {}
 
 /**
  * Finds whether a variable is a resource
- * @link http://php.net/manual/en/function.is-resource.php
+ * @link https://php.net/manual/en/function.is-resource.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -165,7 +165,7 @@ function is_resource ($var) {}
 
 /**
  * Finds out whether a variable is a boolean
- * @link http://php.net/manual/en/function.is-bool.php
+ * @link https://php.net/manual/en/function.is-bool.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -178,7 +178,7 @@ function is_bool ($var) {}
 
 /**
  * &Alias; <function>is_int</function>
- * @link http://php.net/manual/en/function.is-long.php
+ * @link https://php.net/manual/en/function.is-long.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -191,7 +191,7 @@ function is_long ($var) {}
 
 /**
  * Finds whether the type of a variable is float
- * @link http://php.net/manual/en/function.is-float.php
+ * @link https://php.net/manual/en/function.is-float.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -204,7 +204,7 @@ function is_float ($var) {}
 
 /**
  * Find whether the type of a variable is integer
- * @link http://php.net/manual/en/function.is-int.php
+ * @link https://php.net/manual/en/function.is-int.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -217,7 +217,7 @@ function is_int ($var) {}
 
 /**
  * &Alias; <function>is_int</function>
- * @link http://php.net/manual/en/function.is-integer.php
+ * @link https://php.net/manual/en/function.is-integer.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -230,7 +230,7 @@ function is_integer ($var) {}
 
 /**
  * &Alias; <function>is_float</function>
- * @link http://php.net/manual/en/function.is-double.php
+ * @link https://php.net/manual/en/function.is-double.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -243,7 +243,7 @@ function is_double ($var) {}
 
 /**
  * &Alias; <function>is_float</function>
- * @link http://php.net/manual/en/function.is-real.php
+ * @link https://php.net/manual/en/function.is-real.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -256,7 +256,7 @@ function is_real ($var) {}
 
 /**
  * Finds whether a variable is a number or a numeric string
- * @link http://php.net/manual/en/function.is-numeric.php
+ * @link https://php.net/manual/en/function.is-numeric.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -269,7 +269,7 @@ function is_numeric ($var) {}
 
 /**
  * Find whether the type of a variable is string
- * @link http://php.net/manual/en/function.is-string.php
+ * @link https://php.net/manual/en/function.is-string.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -282,7 +282,7 @@ function is_string ($var) {}
 
 /**
  * Finds whether a variable is an array
- * @link http://php.net/manual/en/function.is-array.php
+ * @link https://php.net/manual/en/function.is-array.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -295,7 +295,7 @@ function is_array ($var) {}
 
 /**
  * Finds whether a variable is an object
- * @link http://php.net/manual/en/function.is-object.php
+ * @link https://php.net/manual/en/function.is-object.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -308,7 +308,7 @@ function is_object ($var) {}
 
 /**
  * Finds whether a variable is a scalar
- * @link http://php.net/manual/en/function.is-scalar.php
+ * @link https://php.net/manual/en/function.is-scalar.php
  * @param mixed $var <p>
  * The variable being evaluated.
  * </p>
@@ -321,14 +321,12 @@ function is_scalar ($var) {}
 
 /**
  * Verify that the contents of a variable can be called as a function
- * @link http://php.net/manual/en/function.is-callable.php
- * @param callback|callable $name <p>
- * Can be either the name of a function stored in a string variable, or
- * an object and the name of a method within the object, like this: 
- * array($SomeObject, 'MethodName')
+ * @link https://php.net/manual/en/function.is-callable.php
+ * @param callable|mixed $var <p>
+ * The value to check
  * </p>
  * @param bool $syntax_only [optional] <p>
- * If set to true the function only verifies that
+ * If set to <b>TRUE</b> the function only verifies that
  * name might be a function or method. It will only
  * reject simple variables that are not strings, or an array that does
  * not have a valid structure to be used as a callback. The valid ones
@@ -341,21 +339,25 @@ function is_scalar ($var) {}
  * that someClass::SomeMethod() is a callable static method, this is not
  * the case.
  * </p>
- * @return bool true if name is callable, false 
+ * @return bool <b>TRUE</b> if $var is callable, <b>FALSE</b>
  * otherwise.
  * @since 4.0.6
  * @since 5.0
+ * @since 7.0
  */
-function is_callable ($name, $syntax_only = null, &$callable_name = null) {}
+function is_callable ($var, $syntax_only = null, &$callable_name = null) {}
 
 /**
  * Closes process file pointer
- * @link http://php.net/manual/en/function.pclose.php
+ * @link https://php.net/manual/en/function.pclose.php
  * @param resource $handle <p>
  * The file pointer must be valid, and must have been returned by a
  * successful call to popen.
  * </p>
- * @return int the termination status of the process that was run.
+ * @return int the termination status of the process that was run. In case of an error then -1 is returned.
+ * </p>
+ * <p>
+ * If PHP has been compiled with <tt>--enable-sigchild</tt>, the return value of this function is undefined.
  * @since 4.0
  * @since 5.0
  */
@@ -363,14 +365,14 @@ function pclose ($handle) {}
 
 /**
  * Opens process file pointer
- * @link http://php.net/manual/en/function.popen.php
+ * @link https://php.net/manual/en/function.popen.php
  * @param string $command <p>
  * The command
  * </p>
  * @param string $mode <p>
  * The mode
  * </p>
- * @return resource a file pointer identical to that returned by
+ * @return bool|resource a file pointer identical to that returned by
  * fopen, except that it is unidirectional (may
  * only be used for reading or writing) and must be closed with
  * pclose. This pointer may be used with
@@ -386,7 +388,7 @@ function popen ($command, $mode) {}
 
 /**
  * Outputs a file
- * @link http://php.net/manual/en/function.readfile.php
+ * @link https://php.net/manual/en/function.readfile.php
  * @param string $filename <p>
  * The filename being read.
  * </p>
@@ -397,7 +399,7 @@ function popen ($command, $mode) {}
  * @param resource $context [optional] <p>
  * A context stream resource.
  * </p>
- * @return int the number of bytes read from the file. If an error
+ * @return false|int the number of bytes read from the file. If an error
  * occurs, false is returned and unless the function was called as
  * @readfile, an error message is printed.
  * @since 4.0
@@ -407,7 +409,7 @@ function readfile ($filename, $use_include_path = null, $context = null) {}
 
 /**
  * Rewind the position of a file pointer
- * @link http://php.net/manual/en/function.rewind.php
+ * @link https://php.net/manual/en/function.rewind.php
  * @param resource $handle <p>
  * The file pointer must be valid, and must point to a file
  * successfully opened by fopen.
@@ -420,7 +422,7 @@ function rewind ($handle) {}
 
 /**
  * Removes directory
- * @link http://php.net/manual/en/function.rmdir.php
+ * @link https://php.net/manual/en/function.rmdir.php
  * @param string $dirname <p>
  * Path to the directory.
  * </p>
@@ -433,7 +435,7 @@ function rmdir ($dirname, $context = null) {}
 
 /**
  * Changes the current umask
- * @link http://php.net/manual/en/function.umask.php
+ * @link https://php.net/manual/en/function.umask.php
  * @param int $mask [optional] <p>
  * The new umask.
  * </p>
@@ -446,7 +448,7 @@ function umask ($mask = null) {}
 
 /**
  * Closes an open file pointer
- * @link http://php.net/manual/en/function.fclose.php
+ * @link https://php.net/manual/en/function.fclose.php
  * @param resource $handle <p>
  * The file pointer must be valid, and must point to a file successfully
  * opened by fopen or fsockopen.
@@ -459,7 +461,7 @@ function fclose ($handle) {}
 
 /**
  * Tests for end-of-file on a file pointer
- * @link http://php.net/manual/en/function.feof.php
+ * @link https://php.net/manual/en/function.feof.php
  * @param resource $handle The file pointer must be valid, and must point to a file successfully opened by fopen() or fsockopen() (and not yet closed by fclose()).
  * @return bool true if the file pointer is at EOF or an error occurs
  * (including socket timeout); otherwise returns false.
@@ -470,9 +472,9 @@ function feof ($handle) {}
 
 /**
  * Gets character from file pointer
- * @link http://php.net/manual/en/function.fgetc.php
+ * @link https://php.net/manual/en/function.fgetc.php
  * @param resource $handle The file pointer must be valid, and must point to a file successfully opened by fopen() or fsockopen() (and not yet closed by fclose()).
- * @return string a string containing a single character read from the file pointed
+ * @return bool|string a string containing a single character read from the file pointed
  * to by handle. Returns false on EOF.
  * @since 4.0
  * @since 5.0
@@ -481,7 +483,7 @@ function fgetc ($handle) {}
 
 /**
  * Gets line from file pointer
- * @link http://php.net/manual/en/function.fgets.php
+ * @link https://php.net/manual/en/function.fgets.php
  * @param resource $handle The file pointer must be valid, and must point to a file successfully opened by fopen() or fsockopen() (and not yet closed by fclose()).
  * @param int $length [optional] <p>
  * Reading ends when length - 1 bytes have been
@@ -495,7 +497,7 @@ function fgetc ($handle) {}
  * it is more resource efficient for your script to specify the maximum
  * line length.
  * </p>
- * @return string a string of up to length - 1 bytes read from
+ * @return bool|string a string of up to length - 1 bytes read from
  * the file pointed to by handle.
  * </p>
  * <p>
@@ -507,7 +509,7 @@ function fgets ($handle, $length = null) {}
 
 /**
  * Gets line from file pointer and strip HTML tags
- * @link http://php.net/manual/en/function.fgetss.php
+ * @link https://php.net/manual/en/function.fgetss.php
  * @param resource $handle The file pointer must be valid, and must point to a file successfully opened by fopen() or fsockopen() (and not yet closed by fclose()).
  * @param int $length [optional] <p>
  * Length of the data to be retrieved.
@@ -516,7 +518,7 @@ function fgets ($handle, $length = null) {}
  * You can use the optional third parameter to specify tags which should
  * not be stripped.
  * </p>
- * @return string a string of up to length - 1 bytes read from
+ * @return bool|string a string of up to length - 1 bytes read from
  * the file pointed to by handle, with all HTML and PHP
  * code stripped.
  * </p>
@@ -529,12 +531,12 @@ function fgetss ($handle, $length = null, $allowable_tags = null) {}
 
 /**
  * Binary-safe file read
- * @link http://php.net/manual/en/function.fread.php
+ * @link https://php.net/manual/en/function.fread.php
  * @param resource $handle &fs.file.pointer;
  * @param int $length <p>
  * Up to length number of bytes read.
  * </p>
- * @return string the read string or false on failure.
+ * @return string|bool the read string or false on failure.
  * @since 4.0
  * @since 5.0
  */
@@ -542,7 +544,7 @@ function fread ($handle, $length) {}
 
 /**
  * Opens file or URL
- * @link http://php.net/manual/en/function.fopen.php
+ * @link https://php.net/manual/en/function.fopen.php
  * @param string $filename <p>
  * If filename is of the form "scheme://...", it
  * is assumed to be a URL and PHP will search for a protocol handler
@@ -715,7 +717,7 @@ function fread ($handle, $length) {}
  * include_path, too.
  * </p>
  * @param resource $context [optional] &note.context-support;
- * @return resource a file pointer resource on success, or false on error.
+ * @return bool|resource a file pointer resource on success, or false on error.
  * @since 4.0
  * @since 5.0
  */
@@ -723,9 +725,9 @@ function fopen ($filename, $mode, $use_include_path = null, $context = null) {}
 
 /**
  * Output all remaining data on a file pointer
- * @link http://php.net/manual/en/function.fpassthru.php
+ * @link https://php.net/manual/en/function.fpassthru.php
  * @param resource $handle The file pointer must be valid, and must point to a file successfully opened by fopen() or fsockopen() (and not yet closed by fclose()).
- * @return int If an error occurs, fpassthru returns
+ * @return bool|int If an error occurs, fpassthru returns
  * false. Otherwise, fpassthru returns
  * the number of characters read from handle
  * and passed through to the output.
@@ -736,7 +738,7 @@ function fpassthru ($handle) {}
 
 /**
  * Truncates a file to a given length
- * @link http://php.net/manual/en/function.ftruncate.php
+ * @link https://php.net/manual/en/function.ftruncate.php
  * @param resource $handle <p>
  * The file pointer.
  * </p>
@@ -762,7 +764,7 @@ function ftruncate ($handle, $size) {}
 
 /**
  * Gets information about a file using an open file pointer
- * @link http://php.net/manual/en/function.fstat.php
+ * @link https://php.net/manual/en/function.fstat.php
  * @param resource $handle &fs.file.pointer;
  * @return array an array with the statistics of the file; the format of the array
  * is described in detail on the stat manual page.
@@ -773,7 +775,7 @@ function fstat ($handle) {}
 
 /**
  * Seeks on a file pointer
- * @link http://php.net/manual/en/function.fseek.php
+ * @link https://php.net/manual/en/function.fseek.php
  * @param resource $handle &fs.file.pointer;
  * @param int $offset <p>
  * The offset.
@@ -803,14 +805,14 @@ function fseek ($handle, $offset, $whence = SEEK_SET) {}
 
 /**
  * Returns the current position of the file read/write pointer
- * @link http://php.net/manual/en/function.ftell.php
+ * @link https://php.net/manual/en/function.ftell.php
  * @param resource $handle <p>
  * The file pointer must be valid, and must point to a file successfully
  * opened by fopen or popen.
  * ftell gives undefined results for append-only streams
  * (opened with "a" flag).
  * </p>
- * @return int the position of the file pointer referenced by
+ * @return bool|int the position of the file pointer referenced by
  * handle as an integer; i.e., its offset into the file stream.
  * </p>
  * <p>
@@ -822,7 +824,7 @@ function ftell ($handle) {}
 
 /**
  * Flushes the output to a file
- * @link http://php.net/manual/en/function.fflush.php
+ * @link https://php.net/manual/en/function.fflush.php
  * @param resource $handle The file pointer must be valid, and must point to a file successfully opened by fopen() or fsockopen() (and not yet closed by fclose()).
  * @return bool true on success or false on failure.
  * @since 4.0.1
@@ -832,7 +834,7 @@ function fflush ($handle) {}
 
 /**
  * Binary-safe file write
- * @link http://php.net/manual/en/function.fwrite.php
+ * @link https://php.net/manual/en/function.fwrite.php
  * @param resource $handle &fs.file.pointer;
  * @param string $string <p>
  * The string that is to be written.
@@ -849,7 +851,7 @@ function fflush ($handle) {}
  * configuration option will be ignored and no slashes will be
  * stripped from string.
  * </p>
- * @return int 
+ * @return bool|int the number of bytes written, or <b>FALSE</b> on error.
  * @since 4.0
  * @since 5.0
  */
@@ -858,7 +860,7 @@ function fwrite ($handle, $string, $length = null) {}
 /**
  * &Alias; <function>fwrite</function>
  * @see fwrite()
- * @link http://php.net/manual/en/function.fputs.php
+ * @link https://php.net/manual/en/function.fputs.php
  * Binary-safe file write
  * @param resource $handle A file system pointer resource that is typically created using fopen(). 
  * @param string $string <p>
@@ -876,7 +878,7 @@ function fwrite ($handle, $string, $length = null) {}
  * configuration option will be ignored and no slashes will be
  * stripped from string.
  * </p>
- * @return int
+ * @return bool|int the number of bytes written, or <b>FALSE</b> on error.
  * @since 4.0
  * @since 5.0
  */
@@ -884,7 +886,7 @@ function fputs ($handle, $string, $length) {}
 
 /**
  * Attempts to create the directory specified by pathname.
- * @link http://php.net/manual/en/function.mkdir.php
+ * @link https://php.net/manual/en/function.mkdir.php
  * @param string $pathname <p>
  * The directory path.
  * </p>
@@ -914,7 +916,7 @@ function mkdir ($pathname, $mode = 0777, $recursive = false, $context = null) {}
 
 /**
  * Renames a file or directory
- * @link http://php.net/manual/en/function.rename.php
+ * @link https://php.net/manual/en/function.rename.php
  * @param string $oldname <p>
  * </p>
  * <p>
@@ -934,7 +936,7 @@ function rename ($oldname, $newname, $context = null) {}
 
 /**
  * Copies file
- * @link http://php.net/manual/en/function.copy.php
+ * @link https://php.net/manual/en/function.copy.php
  * @param string $source <p>
  * Path to the source file.
  * </p>
@@ -958,7 +960,7 @@ function copy ($source, $dest, $context = null) {}
 
 /**
  * Create file with unique file name
- * @link http://php.net/manual/en/function.tempnam.php
+ * @link https://php.net/manual/en/function.tempnam.php
  * @param string $dir <p>
  * The directory where the temporary filename will be created.
  * </p>
@@ -966,7 +968,7 @@ function copy ($source, $dest, $context = null) {}
  * The prefix of the generated temporary filename.
  * </p>
  * Windows use only the first three characters of prefix.
- * @return string the new temporary filename, or false on
+ * @return bool|string the new temporary filename, or false on
  * failure.
  * @since 4.0
  * @since 5.0
@@ -975,8 +977,8 @@ function tempnam ($dir, $prefix) {}
 
 /**
  * Creates a temporary file
- * @link http://php.net/manual/en/function.tmpfile.php
- * @return resource a file handle, similar to the one returned by
+ * @link https://php.net/manual/en/function.tmpfile.php
+ * @return resource|bool a file handle, similar to the one returned by
  * fopen, for the new file or false on failure.
  * @since 4.0
  * @since 5.0
@@ -985,7 +987,7 @@ function tmpfile () {}
 
 /**
  * Reads entire file into an array
- * @link http://php.net/manual/en/function.file.php
+ * @link https://php.net/manual/en/function.file.php
  * @param string $filename <p>
  * Path to the file.
  * </p>
@@ -1002,7 +1004,7 @@ function tmpfile () {}
  * <p>
  * &note.context-support;
  * </p>
- * @return array the file in an array. Each element of the array corresponds to a
+ * @return array|bool the file in an array. Each element of the array corresponds to a
  * line in the file, with the newline still attached. Upon failure,
  * file returns false.
  * </p>
@@ -1018,62 +1020,13 @@ function file ($filename, $flags = null, $context = null) {}
 
 /**
  * Reads entire file into a string
- * @link http://php.net/manual/en/function.file-get-contents.php
+ * @link https://php.net/manual/en/function.file-get-contents.php
  * @param string $filename <p>
  * Name of the file to read.
  * </p>
- * @param int $flags [optional] <p>
- * Prior to PHP 6, this parameter is called
- * use_include_path and is a bool.
- * As of PHP 5 the FILE_USE_INCLUDE_PATH can be used
- * to trigger include path
- * search.
- * </p>
- * <p>
- * The value of flags can be any combination of 
- * the following flags (with some restrictions), joined with the
- * binary OR (|)
- * operator.
- * </p>
- * <p>
- * <table>
- * Available flags
- * <tr valign="top">
- * <td>Flag</td>
- * <td>Description</td>
- * </tr>
- * <tr valign="top">
- * <td>
- * FILE_USE_INCLUDE_PATH
- * </td>
- * <td>
- * Search for filename in the include directory.
- * See include_path for more
- * information.
- * </td>
- * </tr>
- * <tr valign="top">
- * <td>
- * FILE_TEXT
- * </td>
- * <td>
- * As of PHP 6, the default encoding of the read
- * data is UTF-8. You can specify a different encoding by creating a 
- * custom context or by changing the default using 
- * stream_default_encoding. This flag cannot be 
- * used with FILE_BINARY. 
- * </td>
- * </tr>
- * <tr valign="top">
- * <td>
- * FILE_BINARY
- * </td>
- * <td>
- * With this flag, the file is read in binary mode. This is the default
- * setting and cannot be used with FILE_TEXT. 
- * </td>
- * </tr>
- * </table>
+ * @param bool $use_include_path [optional] <p>
+ * Note: As of PHP 5 the FILE_USE_INCLUDE_PATH constant can be
+ * used to trigger include path search.
  * </p>
  * @param resource $context [optional] <p>
  * A valid context resource created with 
@@ -1087,15 +1040,15 @@ function file ($filename, $flags = null, $context = null) {}
  * Maximum length of data read. The default is to read until end
  * of file is reached.
  * </p>
- * @return string The function returns the read data or false on failure.
+ * @return string|bool The function returns the read data or false on failure.
  * @since 4.3.0
  * @since 5.0
  */
-function file_get_contents ($filename, $flags = null, $context = null, $offset = null, $maxlen = null) {}
+function file_get_contents ($filename, $use_include_path = false, $context = null, $offset = 0, $maxlen = null) {}
 
 /**
  * Write a string to a file
- * @link http://php.net/manual/en/function.file-put-contents.php
+ * @link https://php.net/manual/en/function.file-put-contents.php
  * @param string $filename <p>
  * Path to the file where to write the data.
  * </p>
@@ -1153,31 +1106,7 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * <td>
  * Acquire an exclusive lock on the file while proceeding to the 
  * writing. Mutually exclusive with FILE_APPEND.
- * </td>
- * </tr>
- * <tr valign="top">
- * <td>
- * FILE_TEXT
- * </td>
- * <td>
- * data is written in text mode. If unicode 
- * semantics are enabled, the default encoding is UTF-8.
- * You can specify a different encoding by creating a custom context
- * or by using the stream_default_encoding to
- * change the default. This flag cannot be used with 
- * FILE_BINARY. This flag is only available since
- * PHP 6.
- * </td>
- * </tr>
- * <tr valign="top">
- * <td>
- * FILE_BINARY
- * </td>
- * <td>
- * data will be written in binary mode. This
- * is the default setting and cannot be used with
- * FILE_TEXT. This flag is only available since
- * PHP 6.
+ * @since 5.1.0
  * </td>
  * </tr>
  * </table>
@@ -1186,8 +1115,8 @@ function file_get_contents ($filename, $flags = null, $context = null, $offset =
  * A valid context resource created with 
  * stream_context_create.
  * </p>
- * @return int The function returns the number of bytes that were written to the file, or
+ * @return int|bool The function returns the number of bytes that were written to the file, or
  * false on failure.
  * @since 5.0
  */
-function file_put_contents ($filename, $data, $flags = null, $context = null) {}
+function file_put_contents ($filename, $data, $flags = 0, $context = null) {}
